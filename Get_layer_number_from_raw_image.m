@@ -67,6 +67,3 @@ colormap(jet);
 caxis([0 4]);
 colorbar;
 view([0 -90]);
-
-
-
