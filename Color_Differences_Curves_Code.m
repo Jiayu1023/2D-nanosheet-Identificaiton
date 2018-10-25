@@ -142,8 +142,7 @@ z=zeros(Layer+1,1);
 
 
 for jy=1:1:Layer+1
-    
-    
+     
     for gail_X=1:1:4121
         X(jy)=(I_lambda(gail_X).*R_lambda(gail_X,jy).*x_(gail_X).*0.1);
         sum_X(jy)=sum_X(jy)+X(jy);
@@ -208,8 +207,7 @@ for jy=1:1:Layer+1
     else
         B_read(jy)=1.*((1+0.055).*(B_linear(jy).^(1./gamma))-0.055);
     end
-    
-    
+     
 end
 
 R=R_read;
@@ -378,4 +376,3 @@ xlabel('Layer number'),ylabel('Color difference');
 
 delta_E=delta_E';
 TransLab=(rgb2lab(RGB));
-
