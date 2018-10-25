@@ -107,7 +107,7 @@ I_lambda=D65(:,2);
 
 CIE=load('H:\Data\Camera xyz Interp 388_800.txt'); % Color matching functions data
 
-CIEINDX=1;
+CIEINDX=1; % CIE standard observer, human eye
 x_=CIE(3.*(CIEINDX)-2,:)';
 y_=CIE(3.*(CIEINDX)-1,:)';
 z_=CIE(3.*(CIEINDX),:)';
