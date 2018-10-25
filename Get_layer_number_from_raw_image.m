@@ -2,7 +2,7 @@ close all;
 clear all;
 clc;
 
-xx=imread('F:/Calculation Results/WSe2.bmp'); % Raw image
+xx=imread('F:/Calculation Results/WSe2 270nm Example.bmp'); % Raw image
 RGB=double(xx)./255;
 
 SubstrateRGB270=[0.630660265400170 0.282595577548276 0.295851511688653]; % color of 270 nm SiO2/Si substrate, under specified condition
