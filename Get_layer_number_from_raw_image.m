@@ -5,8 +5,8 @@ clc;
 xx=imread('F:/Calculation Results/WSe2.bmp'); % Raw image
 RGB=double(xx)./255;
 
-SubstrateRGB270=[0.486159362400436 0.300859598067361 0.587771633365594]; % color of 270 nm SiO2/Si substrate, under specified condition
-SubstrateXYZ270=[0.1644 0.1175 0.3020];% color of 270 nm SiO2/Si substrate, under specified condition
+SubstrateRGB270=[0.630660265400170 0.282595577548276 0.295851511688653]; % color of 270 nm SiO2/Si substrate, under specified condition
+SubstrateXYZ270=[0.1827 0.1272 0.0823];% color of 270 nm SiO2/Si substrate, under specified condition
 
 SRGB=[0.6527 0.5847 0.3488]; % color of substrate, raw image
 
@@ -55,10 +55,10 @@ ShowXYZ(:,:,2)=(SubstrateXYZ270(2)-SXYZSum(2)).*ones(w1,w2)+ShowXYZ(:,:,2);
 ShowXYZ(:,:,3)=(SubstrateXYZ270(3)-SXYZSum(3)).*ones(w1,w2)+ShowXYZ(:,:,3);
 
 Lab=rgb2lab(double(uint8(xyz2rgb(ShowXYZ).*255))./255);
-SLab=[40.8160 33.6703 -32.4725]; % color of 270 nm SiO2/Si substrate, under specified condition
+SLab=[42.3339 37.1177 16.0223]; % color of 270 nm SiO2/Si substrate, under specified condition
 
 DeltaE=sqrt((Lab(:,:,1)-SLab(1).*ones(w1,w2)).^2+(Lab(:,:,2)-SLab(2).*ones(w1,w2)).^2+(Lab(:,:,3)-SLab(3).*ones(w1,w2)).^2);
-Layernumber_WSe2=(1.22382183e-09.*DeltaE.^6)-(1.27202489e-07.*DeltaE.^5)+(3.43561663e-06.*DeltaE.^4)+(1.41740834e-05.*DeltaE.^3)-(2.97331604e-15);
+Layernumber_WSe2=(2913068890455131.*DeltaE.^6)./1208925819614629174706176 - (8384126003118983.*DeltaE.^5)./37778931862957161709568 + (3023233943789855.*DeltaE.^4)./590295810358705651712 + (8266497270349265.*DeltaE.^3)./295147905179352825856 + 4083586185560143./633825300114114700748351602688; % WSe2 270 Eye-A
 
 figure(1)
 pcolor(Layernumber_WSe2);
